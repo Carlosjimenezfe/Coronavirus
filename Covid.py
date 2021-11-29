@@ -90,4 +90,9 @@ fallecidos
 dpto_fallecidos = data[data['Recuperado'] == 'fallecido'].groupby('Nombre departamento').size().sort_values(ascending=False).head(10)
 print(f'{dpto_fallecidos}') 
 
- 
+"""
+13. Liste de mayor a menor los 10 departamentos con mas casos de
+recuperados
+"""
+dpto_recuperados = data[data['Recuperado'] == 'Recuperado'].groupby('Nombre departamento').size().sort_values(ascending=False).head(10)
+print(f' {dpto_recuperados}')     
