@@ -62,3 +62,11 @@ print(f'{importado}')
 Departamentos = len(data.groupby('Nombre departamento').size())
 print(f'EL numero de municipios afectado es de: {Departamentos}')
 
+"""
+9.Liste los departamentos afectados(sin repetirlos)
+"""
+data['Nombre departamento'].replace('Caldas', 'CALDAS', inplace=True)
+data['Nombre departamento'].replace('Tolima', 'TOLIMA', inplace=True)
+l_departamentos = data.groupby('Nombre departamento').size().sort_values(ascending=False)
+print(f'Lista de Departamentos afectados: {l_departamentos}')
+ 
