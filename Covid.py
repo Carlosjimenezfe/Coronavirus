@@ -103,3 +103,10 @@ contagiados
 """
 mas_contagiados = data.groupby('Nombre municipio').size().sort_values(ascending=False).head(10)
 print(f' {mas_contagiados}') 
+
+"""
+15. Liste de mayor a menor los 10 municipios con mas casos de
+fallecidos
+"""
+casos_municipios = data[data['Recuperado'] == 'fallecido'].groupby('Nombre municipio').size().sort_values(ascending=False).head(10)
+print(f'{casos_municipios}') 
