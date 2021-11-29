@@ -132,3 +132,9 @@ departamento
 numero_personas = data.groupby(['Nombre departamento', 'Nombre municipio','Sexo']).size().sort_values(ascending=False)
 print( f' {numero_personas}') 
 
+"""
+19. Liste el promedio de edad de contagiados por hombre y mujeres por
+ciudad por departamento
+"""
+promedio = data.groupby( ['Nombre departamento', 'Nombre municipio', 'Sexo']).Edad.mean()
+print(f'{promedio}')
