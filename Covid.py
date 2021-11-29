@@ -19,4 +19,12 @@ print(f'El numero de casos de contagios en el pais es de: {n_casos}')
 2. Número de Municipios Afectados
 """
 municipios = len(data.groupby('Nombre municipio').size())
-print(f'El numero de municipios afectados son: {municipios}')
+print(f'EL numero de municipios afectado es de: {municipios}')
+
+"""
+3. Liste los municipios afectados (sin repetirlos)
+"""
+
+l_municipios = data.groupby('Nombre municipio').size().sort_values(ascending=False)
+print(f'\nMunicipios afectados: {l_municipios}') 
+
