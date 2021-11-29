@@ -55,3 +55,10 @@ Relacionado)
 """
 importado = data.groupby('Tipo de contagio').size().sort_values(ascending=False)
 print(f'{importado}')
+
+"""
+8. Número de departamentos afectados
+"""
+Departamentos = len(data.groupby('Nombre departamento').size())
+print(f'EL numero de municipios afectado es de: {Departamentos}')
+
