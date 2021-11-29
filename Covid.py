@@ -48,3 +48,10 @@ print(f'El total de  personas recuperada es de: {recuperados}')
 """
 fallecidos = data[data['Estado'] == 'Fallecido'].shape[0]
 print(f'El total de personas fallecidas en Colombia es de: {fallecidos}')
+
+"""
+7. Ordenar de Mayor a menor por tipo de caso (Importado, en estudio,
+Relacionado)
+"""
+importado = data.groupby('Tipo de contagio').size().sort_values(ascending=False)
+print(f'{importado}')
