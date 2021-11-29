@@ -125,4 +125,10 @@ ciudades con mas casos de contagiados
 dpto_ciudades = data.groupby(['Nombre departamento', 'Nombre municipio']).size().sort_values(ascending=False)
 print(f'{dpto_ciudades}')  
 
+"""
+18. Número de Mujeres y hombres contagiados por ciudad por
+departamento
+"""
+numero_personas = data.groupby(['Nombre departamento', 'Nombre municipio','Sexo']).size().sort_values(ascending=False)
+print( f' {numero_personas}') 
 
