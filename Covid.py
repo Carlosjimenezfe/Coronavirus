@@ -14,3 +14,9 @@ data = pd.read_csv(url)
 """
 n_casos = data.shape[0]
 print(f'El numero de casos de contagios en el pais es de: {n_casos}')
+
+"""
+2. Número de Municipios Afectados
+"""
+municipios = len(data.groupby('Nombre municipio').size())
+print(f'El numero de municipios afectados son: {municipios}')
