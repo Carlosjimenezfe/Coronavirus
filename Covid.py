@@ -96,3 +96,10 @@ recuperados
 """
 dpto_recuperados = data[data['Recuperado'] == 'Recuperado'].groupby('Nombre departamento').size().sort_values(ascending=False).head(10)
 print(f' {dpto_recuperados}')     
+
+"""
+14. Liste de mayor a menor los 10 municipios con mas casos de
+contagiados
+"""
+mas_contagiados = data.groupby('Nombre municipio').size().sort_values(ascending=False).head(10)
+print(f' {mas_contagiados}') 
