@@ -138,3 +138,10 @@ ciudad por departamento
 """
 promedio = data.groupby( ['Nombre departamento', 'Nombre municipio', 'Sexo']).Edad.mean()
 print(f'{promedio}')
+
+"""
+20. Liste de mayor a menor el número de contagiados por país de
+procedencia
+"""
+procedencia = data['Nombre del país'].value_counts()
+print(f'{procedencia}')     
