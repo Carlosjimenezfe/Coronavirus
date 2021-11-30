@@ -5,6 +5,8 @@ Created on Mon Nov 29 10:09:07 2021
 @author: Usuario
 """
 import pandas as pd
+import matplotlib.pyplot as plt
+
 
 url = 'covid_22_noviembre.csv'
 data = pd.read_csv(url)
@@ -181,3 +183,16 @@ print(f'{atencion}')
 """
 promedio_sexo = data.groupby(['Nombre municipio', 'Sexo']).Edad.mean()
 print(f'{promedio_sexo}')
+
+"""
+27. Grafique las curvas de contagio, muerte y recuperación de toda
+Colombia acumulados
+"""
+grafica_contagio = data[data['Recuperado'] == 'fallecido'].groupby('Fecha de diagnóstico').size().sort_values().plot()
+plt.show(grafica_contagio)
+
+grafica_fallecidos = data[data['Recuperado'] == 'fallecido'].groupby('Fecha de diagnóstico').size().sort_values().plot()
+plt.show(grafica_fallecidos)
+
+grafica_recuperados = data[data['Recuperado'] == 'Recuperado'].groupby('Fecha de diagnóstico').size().sort_values().plot()
+plt.show(grafica_recuperados)  
