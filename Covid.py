@@ -242,3 +242,8 @@ data.groupby(['Ubicación del caso']).size().sort_values(ascending = False).plot
 33. Haga un gráfico de barras por Sexo de toda Colombia
 """ 
 data.groupby(['Sexo']).size().sort_values(ascending = False).plot(kind='bar') 
+
+""" 
+34. Haga un gráfico de barras por tipo de toda Colombia
+"""    
+data.groupby(['Tipo de contagio']).size().sort_values(ascending = False).plot(kind='bar')
