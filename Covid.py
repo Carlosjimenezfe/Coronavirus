@@ -170,7 +170,9 @@ print(f'tasa de mortalidad  por ciudad es: {muerte_ciudad}')
 recuperacion_ciudad = (data[data['Recuperado'] == 'Recuperado'].groupby('Nombre municipio').size() / len(data)) * 100
 print(f'L tasa de recuperación por municipio es: {recuperacion_ciudad}')
 
-
+"""
+25. Liste por cada ciudad la cantidad de personas por atención
+"""
+atencion = data.groupby(['Nombre municipio', 'Ubicación del caso']).size()
+print(f'{atencion}')
  
-
-
