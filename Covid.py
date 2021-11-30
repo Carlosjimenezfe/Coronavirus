@@ -220,4 +220,9 @@ personas_recuperadas.groupby('Nombre municipio').size().sort_values(ascending=Fa
 plt.legend()
 plt.show() 
 
-
+"""
+30. Liste de mayor a menor la cantidad de fallecidos por edad en toda
+Colombia.
+"""
+fallecidos = data[data['Recuperado'] == 'fallecido'].groupby('Edad').size().sort_values(ascending = False)
+print(f'{fallecidos}') 
