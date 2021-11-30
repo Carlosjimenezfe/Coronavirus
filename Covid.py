@@ -232,4 +232,8 @@ print(f'{fallecidos}')
 """
 porcentaje = ((data.groupby('Ubicación del caso').size().sort_values(ascending = False)) / ((data.groupby('Ubicación del caso').size().sort_values(ascending = False)).sum())) * 100
 print(porcentaje)   
- 
+
+"""   
+32. Haga un gráfico de barras por atención de toda Colombia
+""" 
+data.groupby(['Ubicación del caso']).size().sort_values(ascending = False).plot(kind='bar')
