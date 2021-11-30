@@ -145,3 +145,10 @@ procedencia
 """
 procedencia = data['Nombre del país'].value_counts()
 print(f'{procedencia}')     
+
+"""
+21. Liste de mayor a menor las fechas donde se presentaron mas
+contagios
+"""
+fecha_contagios = data.groupby('Fecha de diagnóstico').size().sort_values(ascending=False)
+print(f' {fecha_contagios}')
