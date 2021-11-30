@@ -152,3 +152,22 @@ contagios
 """
 fecha_contagios = data.groupby('Fecha de diagnóstico').size().sort_values(ascending=False)
 print(f' {fecha_contagios}')
+
+"""
+23. Liste la tasa de mortalidad y recuperación que tiene cada
+departamento
+"""
+tasa_mortalidad = (data[data['Recuperado'] == 'fallecido'].groupby('Nombre departamento').size() / len(data)) * 100
+print(f' tasa de mortalidad por Departamento: {tasa_mortalidad}')
+tasa_recuperacion = (data[data['Recuperado'] == 'Recuperado'].groupby('Nombre departamento').size() / len(data)) * 100
+print(f'r tasa de recuperación por departamento: {tasa_recuperacion}')
+
+
+
+
+
+
+
+
+tasa_recuperacion_dep = (data[data['Recuperado'] == 'Recuperado'].groupby('Nombre departamento').size() / len(data)) * 100
+print(f'La lista por tasa de recuperación por departamento es: {tasa_recuperacion_dep}')
